@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { TransactionContext } from '../context/TransactionContext';
-import DummyData from '../utils/dummyData';
+import dummyData from "../utils/dummyData";
 import useFetch from '../hooks/useFetch';
 import { Trash2, Check, X, RotateCcw } from 'lucide-react';
 
@@ -78,7 +78,7 @@ const Transactions = () => {
   
   const [selectedTransactions, setSelectedTransactions] = useState(new Set());
   const [showConfirmation, setShowConfirmation] = useState(false);
-  const [localDummyData, setLocalDummyData] = useState(DummyData);
+  const [localDummyData, setLocalDummyData] = useState(dummyData);
 
   // Combine and add unique IDs to transactions
   const dummyWithIds = localDummyData.map((transaction, index) => ({
@@ -147,7 +147,7 @@ const Transactions = () => {
 
   const handleRestoreAll = () => {
     // Restore dummy data
-    setLocalDummyData(DummyData);
+    setLocalDummyData(dummyData);
     
     // Restore blockchain transactions
     if (restoreAllTransactions) {
